@@ -29,8 +29,19 @@ from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 
 load_dotenv()
-model = init_chat_model("groq:openai/gpt-oss-120b")
+model = init_chat_model("groq:openai/gpt-oss-120b",temperature=0.9)
 
-response=model.invoke("give me a paragraph on Abrahamic Religion")
+response=model.invoke("Write a poem on introverts")
 
 print(response.content) 
+
+
+# from dotenv import load_dotenv
+# from langchain_mistralai import ChatMistralAI 
+ 
+# load_dotenv()
+# model = ChatMistralAI(model="mistral-small-2603")
+
+# response=model.invoke("give me a paragraph on Comparative Religion studies")
+
+# print(response.content) 
